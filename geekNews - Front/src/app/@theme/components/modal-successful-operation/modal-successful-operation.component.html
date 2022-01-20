@@ -1,0 +1,10 @@
+<div class="modalResultOperationBox">
+    <img class="modalResultOperationImage" src="{{propsOperation.img}}" alt="">
+    <p class="modalResultOperationMessage">{{propsOperation.message}}</p>
+    <button 
+    mat-button
+    *ngFor="let button of propsOperation.buttons"
+    class="{{button.class}}"
+    (click)="button.action()"
+    >{{button.label}}</button>
+</div>

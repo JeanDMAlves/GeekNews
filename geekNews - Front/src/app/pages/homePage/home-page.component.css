@@ -1,0 +1,21 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    background: var(--white);
+    height: 86px;
+    border-bottom: 1px solid var(--grayscale-2);
+    align-items: center;
+}
+
+.logo-header{
+    color: var(--primary-dark);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 3.5px;
+    font-family: Roboto;
+    margin-left:56px;
+}
+
+app-navegation-header{
+    margin-right: 56px;
+}

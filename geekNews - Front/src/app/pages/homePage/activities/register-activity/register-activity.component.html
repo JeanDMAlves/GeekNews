@@ -1,0 +1,13 @@
+<div class="register-activity-box">
+    <p>{{propsModalRegister.title}}</p>
+    
+    <mat-form-field appearance="outline">
+        <mat-label>{{propsModalRegister.label}}</mat-label>
+        <textarea [formControl]="activity" matInput placeholder="Ex: Lavar a louça"></textarea>
+    </mat-form-field>
+
+    <button mat-button
+    *ngFor="let button of propsModalRegister.buttons" 
+    class="{{button.class}}" 
+    (click)="button.action(setActivity())">{{button.label}}</button>
+</div>

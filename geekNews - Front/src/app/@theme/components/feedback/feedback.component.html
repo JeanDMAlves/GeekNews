@@ -1,0 +1,14 @@
+<div class="feedback">
+    <div *ngIf = "image">
+        <img src="/" alt="imagem"/>
+    </div>
+    <div>
+        <p class="feedback-message">{{message}}</p>
+    </div>
+    <div *ngIf="buttons">
+        <button mat-button *ngFor="let button of buttons" class="{{button.class}}" id="button">
+            {{button.icon}}
+            {{button.label}}
+        </button>
+    </div>
+</div>

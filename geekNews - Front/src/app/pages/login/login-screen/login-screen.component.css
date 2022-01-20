@@ -1,0 +1,32 @@
+.grid {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: minmax(min-content, 845px) auto;
+    grid-template-areas: "img box";
+}
+
+.background-img {
+    grid-area: img;
+    height: 100vh;
+    width: 100%;
+}
+
+app-login-box {
+    grid-area: box;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.image-message {
+    position: fixed;
+
+    left: 56px;
+    bottom: 56px;
+
+    font-weight: bold;
+    font-size: 86px;
+    line-height: 101px;
+
+    color: var(--white);
+}

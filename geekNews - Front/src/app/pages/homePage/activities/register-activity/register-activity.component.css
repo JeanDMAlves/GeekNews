@@ -1,0 +1,14 @@
+.register-activity-box {
+    max-width: 272px;
+    width: 15vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    margin: 5rem auto;
+}
+
+.register-activity-add-button {
+    width: 100%;
+}

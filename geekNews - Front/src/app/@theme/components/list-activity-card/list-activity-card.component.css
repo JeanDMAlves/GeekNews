@@ -1,0 +1,33 @@
+.listBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 22px 32px;
+    border: 1px solid var(--grayscale-2);
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.listBox-data-title {
+    color: var(--grayscale-4);
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.listBox-data-value {
+    color: var(--grayscale-5);
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0;
+}
+
+.orange-button {
+    width: auto;
+    min-width: 75px;
+    max-width: 115px;
+    margin-right: 16px;
+}

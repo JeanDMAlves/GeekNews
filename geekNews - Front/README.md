@@ -1,27 +1,32 @@
-# GeekNews
+# angular-boilerplate
+Repositório inicial para os participantes do bootcamp realizarem seus exercícios
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+## Docker
 
-## Development server
+Para iniciar o projeto é necessário ter o `docker` e o `docker-compose` instalados.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Docker: <https://docs.docker.com/engine/install/>
 
-## Code scaffolding
+Docker Compose: <https://docs.docker.com/compose/install/>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Iniciando o projeto
 
-## Build
+Instale as dependências rodando o comando abaixo na raiz do diretório:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```sh
+npm install
+```
 
-## Running unit tests
+Na primeira vez que iniciar o projeto é necessário gerar o build do `Dockerfile` com o comando:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```sh
+docker-compose up --build
+```
 
-## Running end-to-end tests
+Para rodar o projeto basta executar o comando:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```sh
+docker-compose up
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Quando terminar o build só acessar pelo link: <http://localhost:4200>

@@ -1,0 +1,46 @@
+<section class="input">
+    <h1 class="logo">RIOTT</h1>
+    <p class="welcome-message">
+        Controle as tarefas e mesada dos seus filhos para manter a casa em
+        harmonia.
+    </p>
+
+    <mat-form-field appearance="outline" class="email">
+        <mat-label>E-mail</mat-label>
+        <input
+            matInput
+            placeholder="Email@email.com"
+            [formControl]="email"
+            required
+        />
+        <mat-error *ngIf="email.invalid">{{
+            getEmailErrorMessage()
+        }}
+    </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="password">
+        <mat-label>Senha</mat-label>
+        <input
+            matInput
+            [formControl]="password"
+            minlength="6"
+            [type]="hide ? 'password' : 'text'"
+        />
+        <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}
+        </mat-error>
+        <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+        >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <button class="green-button" type="submit" (click)="onSubmit()">
+        Entrar
+    </button>
+</section>

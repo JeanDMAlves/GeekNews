@@ -1,0 +1,14 @@
+.activities-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+}
+
+.activities-title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: var(--grayscale-5);
+    margin: 0;
+}
