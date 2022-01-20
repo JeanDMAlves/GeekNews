@@ -1,12 +1,15 @@
 (async () => {
     const database = require('./db');
     const User = require('./user');
+    const cors = require('cors')
+
     await database.sync();
 
     const express = require('express');
     const server = express();
     server.use(express.json())
-    
+    server.use(cors())
+
     server.get('/users', (req, res) => {
         // Retorna os usuários cadastrados no banco de dados
         User.findAll().then((dados) => {
@@ -39,10 +42,9 @@
         
     })
 
-    server.post('/login', (req, res) => {
+    server.post('/login', (req, res, next) => {
         // Verifica se o usuário existe no banco de dados
         const user = req.body
-        // console.log(user)
         User.findAll().then((dados) => {
             for(item of dados){
                 if((user.email == item.email) && (user.password == item.password)){

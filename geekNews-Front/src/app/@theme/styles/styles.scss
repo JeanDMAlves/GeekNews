@@ -1,0 +1,133 @@
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:root {
+    --primary-dark: #006d77;
+    --primary-light: #83c5be;
+    --secondary-dark: #e29578;
+    --secondary-light: #3f3f3f;
+    --grayscale-1: #edf6f9;
+    --grayscale-2: #dee8eb;
+    --grayscale-3: #b5c5ca;
+    --grayscale-4: #7c8d93;
+    --grayscale-5: #3b4244;
+    --support-red: #eb5757;
+    --support-green: #27ae60;
+    --support-blue: #2f80ed;
+    --white: #ffffff;
+
+    /* cor do outliner */
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: var(--grayscale-4);
+    }
+    /* cor quando focado */
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+        color: var(--primary-dark);
+    }
+    /* Cor da caixa ao dar inserir campo invalido */
+    .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+        color: var(--grayscale-4);
+    }
+
+    .ng-star-inserted {
+        color: var(--grayscale-4);
+    }
+
+    ::-webkit-scrollbar {
+        border-radius: 90px;
+        width: 8px;
+        background: var(--grayscale-2);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--grayscale-3);
+        border-radius: 90px;
+    }
+
+    a:hover {
+        color: var(--primary-dark);
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    button {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+
+        border-radius: 4px;
+        line-height: 16px;
+        height: 40px;
+    }
+
+    .dark-green-button {
+        width: 188px;
+        color: var(--white);
+        background: var(--primary-dark);
+        border: 2px var(--primary-dark) solid;
+    }
+
+    .light-green-button {
+        width: 69px;
+        color: var(--white);
+        background: var(--primary-light);
+        border: 2px var(--primary-light) solid;
+    }
+
+    .orange-button {
+        color: var(--secondary-dark);
+        background: var(--white);
+        border: 2px var(--secondary-dark) solid;
+    }
+
+    .modal {
+        overflow: hidden;
+    }
+
+    .modal-header {
+        border-bottom: 0;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
+    }
+
+    .modal-content {
+        height: 100vh;
+    }
+    .modal-dialog {
+        max-width: 100vw;
+        width: 100%;
+        margin: 0;
+        margin-top: 80px;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-prefix {
+        top: 0;
+    }
+
+    .cdk-overlay-container {
+        z-index: 10000000000;
+        position: fixed;
+    }
+
+    .mat-calendar-body-selected {
+        background-color: var(--primary-dark);
+    }
+
+    .mat-datepicker-toggle-active {
+        color: var(--primary-dark);
+    }
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
