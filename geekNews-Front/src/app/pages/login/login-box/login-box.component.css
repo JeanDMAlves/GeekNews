@@ -19,6 +19,10 @@
     margin-bottom: 16px;
 }
 
+.dark-green-button:hover , .light-green-button:hover, .orange-button:hover{
+  transform: scale(1.1);
+}
+
 .email {
     width: 100%;
 }
@@ -43,4 +47,13 @@
     width: 15vw;
     margin: 4rem auto;
     margin-bottom: 1rem;
+}
+
+.error{
+  text-decoration: dotted;
+  color: red
+}
+
+.successful{
+  color:green
 }

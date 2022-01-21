@@ -52,6 +52,12 @@
 		<div class="modalRegisterUser">
 				<p>Insira os dados abaixo para cadastrar um novo membro ao Geek News.</p>
 
+        <ul *ngIf="registerErrorList.length > 0">
+          <li class ="error" *ngFor="let error of registerErrorList">{{error}}</li>
+        </ul>
+
+        <h3 class="successful" *ngIf="registeredMember">{{registeredMember}}</h3>
+
 				<mat-form-field appearance="outline"  >
 						<mat-label>E-mail</mat-label>
 						<input [formControl]="userEmail" matInput placeholder="exemplo@email.com">

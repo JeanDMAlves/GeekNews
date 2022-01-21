@@ -22,6 +22,8 @@ export class LoginBoxComponent {
     public userEmail: FormControl =  new FormControl("", [Validators.required, Validators.email]);
     public userPassword: FormControl = new FormControl("");
     public userPasswordConfirm: FormControl = new FormControl("");
+    public registerErrorList: Array<string> = []
+    public registeredMember: string = ''
 
     constructor(
         private login: AuthenticationService,
@@ -32,7 +34,36 @@ export class LoginBoxComponent {
     ) {}
 
 	public registerNewUser(): any{
-		console.log(this.getRegisterData())
+		const user: IClient = this.getRegisterData()
+		if(user.password && user.email && user.confirmedPassword){
+      this.registeredMember = ''
+			if(user.password == user.confirmedPassword){
+        		this.registerErrorList = []
+				this.UserService.RegisterUser({
+					email: user.email,
+					password: user.password
+				}).subscribe((data: any) => {
+					if(data['resultado']){
+            this.registerErrorList = []
+            this.registeredMember = 'Usuário cadastrado com sucesso'
+          } else {
+            this.addErrorList(data['message'], this.registerErrorList)
+          }
+				})
+			} else {
+				let message = 'As senhas não coincidem'
+				this.addErrorList(message, this.registerErrorList)
+     		}
+    	}else {
+      		let message = 'Todos os campos devem estar preenchidos'
+        	this.addErrorList(message, this.registerErrorList)
+    	}
+	}
+
+	private addErrorList(message: string, list: Array<string>){
+		if(list.filter((data: string) => { return data == message }).length == 0){
+		  list.push(message)
+		}
 	}
 
 	/**
