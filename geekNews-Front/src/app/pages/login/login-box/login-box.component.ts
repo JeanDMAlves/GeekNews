@@ -6,6 +6,7 @@ import { Validators, FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ModalComponent } from "src/app/@theme/components/modal/modal.component";
+import { UserService } from "src/app/@core/services/user.service";
 @Component({
     selector: "app-login-box",
     templateUrl: "./login-box.component.html",
@@ -17,15 +18,41 @@ export class LoginBoxComponent {
     public hide: boolean = true;
     public email: FormControl = new FormControl("", [Validators.required, Validators.email]);
     public password: FormControl = new FormControl("");
+
     public userEmail: FormControl =  new FormControl("", [Validators.required, Validators.email]);
     public userPassword: FormControl = new FormControl("");
+    public userPasswordConfirm: FormControl = new FormControl("");
 
     constructor(
-        private login: AuthenticationService, 
-        private localStorage: LocalStorageService, 
+        private login: AuthenticationService,
+        private localStorage: LocalStorageService,
         private router: Router,
         private modalService: NgbModal,
-        ) {}
+        private UserService: UserService,
+    ) {}
+
+	public registerNewUser(): any{
+		console.log(this.getRegisterData())
+	}
+
+	/**
+	 * Pega os dados de cadastro do usuário
+	 * @returns Um objeto contendo os dados do usuário
+	 */
+    private getRegisterData(): IClient {
+      return {
+          email: this.userEmail.value,
+          password: this.userPassword.value,
+          confirmedPassword: this.userPasswordConfirm.value,
+      };
+    }
+
+    /**
+     * Abre o modal para cadastrar um novo usuário
+     */
+    public openRegisterUser(): void{
+        this.openModals(this.modalRegisterUser, 'Cadastrar novo usuário')
+    }
 
     /**
      * Pega os dados do formulário (email e senha),
@@ -33,24 +60,20 @@ export class LoginBoxComponent {
      * Se o usuário estiver cadastrado adiciona o Token de Login
      * no LocalStorage e redireciona para a página Home
      */
-    public onSubmit(): void {
-        const client: IClient = this.getClientData();
-        this.login.validateLogin(client).subscribe((data: any) => {
-            if(data["status"]){
-                this.localStorage.createToken(data["data"]);
-                this.router.navigate(["pages/home/"]);
-                console.log('Deu Certo')
-            }else{
-                window.alert('Usuário não está cadastrado')
-            }
-            
-        });
-    }
+	public onSubmit(): void {
+		const client: IClient = this.getClientData();
+		this.login.validateLogin(client).subscribe((data: any) => {
+			if(data["status"]){
+				this.localStorage.createToken(data["data"]);
+				this.router.navigate(["pages/home/"]);
+				console.log('Deu Certo')
+			}else{
+				window.alert('Usuário não está cadastrado')
+			}
 
-    public registerUser(): void{
-        this.openModals(this.modalRegisterUser, 'Registrar novo usuário')
-    }
-    
+		});
+  	}
+
     /**
      * Abre um modal
      * @param modalBody - Corpo do modal
@@ -63,6 +86,9 @@ export class LoginBoxComponent {
         openedModal.componentInstance.title = title;
     }
 
+    /**
+     * Fecha qualquer modal aberto nessa instância do código
+     */
     public closeModal(): void {
         this.modalService.dismissAll();
     }

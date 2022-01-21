@@ -14,17 +14,17 @@
     text-align: center;
 }
 
-.dark-green-button {
+.dark-green-button, .light-green-button {
     width: 100%;
     margin-bottom: 16px;
 }
 
 .email {
-    width: 306px;
+    width: 100%;
 }
 
 .password {
-    width: 306px;
+    width: 100%;
 }
 
 .input {

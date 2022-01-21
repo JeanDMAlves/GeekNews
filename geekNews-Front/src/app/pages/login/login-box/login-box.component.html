@@ -1,83 +1,106 @@
 <section class="input">
-    <h1 class="logo">GEEK NEWS</h1>
-    <p class="welcome-message">
-        Fique atualizado nas novidades do mundo Nerd. Venha com a gente! 
-    </p>
+		<h1 class="logo">GEEK NEWS</h1>
+		<p class="welcome-message">
+				Fique atualizado nas novidades do mundo Nerd. Venha com a gente!
+		</p>
 
-    <mat-form-field appearance="outline" class="email">
-        <mat-label>E-mail</mat-label>
-        <input
-            matInput
-            placeholder="Email@email.com"
-            [formControl]="email"
-            required
-        />
-        <mat-error *ngIf="email.invalid">{{
-            getEmailErrorMessage()
-        }}
-    </mat-error>
-    </mat-form-field>
+		<mat-form-field appearance="outline" class="email">
+				<mat-label>E-mail</mat-label>
+				<input
+						matInput
+						placeholder="Email@email.com"
+						[formControl]="email"
+						required
+				/>
+				<mat-error *ngIf="email.invalid">{{
+						getEmailErrorMessage()
+				}}
+		</mat-error>
+		</mat-form-field>
 
-    <mat-form-field appearance="outline" class="password">
-        <mat-label>Senha</mat-label>
-        <input
-            matInput
-            [formControl]="password"
-            minlength="6"
-            [type]="hide ? 'password' : 'text'"
-        />
-        <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}
-        </mat-error>
-        <button
-            mat-icon-button
-            matSuffix
-            (click)="hide = !hide"
-            [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide"
-        >
-            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-        </button>
-    </mat-form-field>
+		<mat-form-field appearance="outline" class="password">
+				<mat-label>Senha</mat-label>
+				<input
+						matInput
+						[formControl]="password"
+						minlength="6"
+						[type]="hide ? 'password' : 'text'"
+				/>
+				<mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}
+				</mat-error>
+				<button
+						mat-icon-button
+						matSuffix
+						(click)="hide = !hide"
+						[attr.aria-label]="'Hide password'"
+						[attr.aria-pressed]="hide"
+				>
+						<mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+				</button>
+		</mat-form-field>
 
-    <button mat-button class="dark-green-button" id="button" type="submit" (click)="onSubmit()">
-        Entrar
-    </button>
+		<button mat-button class="dark-green-button" id="button" type="submit" (click)="onSubmit()">
+				Entrar
+		</button>
 
-    <button mat-button class="dark-green-button" (click)="registerUser()">
-        Cadastre-se
-    </button>
+		<button mat-button class="light-green-button" (click)="openRegisterUser()">
+				Cadastre-se
+		</button>
 </section>
 
 <ng-template #modalRegisterUser>
-    <div class="modalRegisterUser">
-        <p>Teste</p>
+		<div class="modalRegisterUser">
+				<p>Insira os dados abaixo para cadastrar um novo membro ao Geek News.</p>
 
-        <mat-form-field appearance="outline">
-            <mat-label>E-mail</mat-label>
-            <input [formControl]="userEmail" matInput placeholder="exemplo@email.com">
-        </mat-form-field>
+				<mat-form-field appearance="outline"  >
+						<mat-label>E-mail</mat-label>
+						<input [formControl]="userEmail" matInput placeholder="exemplo@email.com">
+				</mat-form-field>
 
-        <mat-form-field appearance="outline" class="password">
-            <mat-label>Senha</mat-label>
-            <input
-                matInput
-                [formControl]="userPassword"
-                minlength="6"
-                [type]="hide ? 'password' : 'text'"
-            />
-            <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}
-            </mat-error>
-            <button
-                mat-icon-button
-                matSuffix
-                (click)="hide = !hide"
-                [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide"
-            >
-                <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-            </button>
-        </mat-form-field>
-    
-        <button (click)="closeModal()" mat-button class="orange-button">Cancelar</button>
-    </div>
+				<mat-form-field appearance="outline" class="password" >
+						<mat-label>Senha</mat-label>
+						<input
+							matInput
+							[formControl]="userPassword"
+							minlength="6"
+							[type]="hide ? 'password' : 'text'"
+						/>
+						<mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}
+						</mat-error>
+						<button
+							mat-icon-button
+							matSuffix
+							(click)="hide = !hide"
+							[attr.aria-label]="'Hide password'"
+							[attr.aria-pressed]="hide"
+						>
+							<mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+						</button>
+				</mat-form-field>
+
+				<mat-form-field appearance="outline" class="password">
+						<mat-label>Confirmar Senha</mat-label>
+						<input
+							matInput
+							[formControl]="userPasswordConfirm"
+							minlength="6"
+							[type]="hide ? 'password' : 'text'"
+						/>
+						<mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}
+						</mat-error>
+						<button
+							mat-icon-button
+							matSuffix
+							(click)="hide = !hide"
+							[attr.aria-label]="'Hide password'"
+							[attr.aria-pressed]="hide"
+						>
+							<mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+						</button>
+				</mat-form-field>
+
+				<button (click)="registerNewUser()" mat-button class="dark-green-button">Cadastrar</button>
+
+				<button (click)="closeModal()" mat-button class="orange-button">Cancelar</button>
+		</div>
 </ng-template>

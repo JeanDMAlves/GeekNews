@@ -9,7 +9,7 @@ import { environment } from "src/environments/environment";
     providedIn: "root",
 })
 export class AuthenticationService {
-    private url: string = 'http://localhost:3000/';
+    private url: string = environment.urlUser;
     constructor(private http: HttpClient) {}
     private httpOptions = {
         headers: new HttpHeaders({
