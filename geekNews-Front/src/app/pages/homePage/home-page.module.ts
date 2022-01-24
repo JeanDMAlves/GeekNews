@@ -20,6 +20,7 @@ import { SobreComponent } from './sobre/sobre.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { ContatoComponent } from './contato/contato.component';
 import { SairComponent } from './sair/sair.component';
+import { FilterNewsComponent } from './noticias/filter-news/filter-news.component';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import { SairComponent } from './sair/sair.component';
         NoticiasComponent,
         ContatoComponent,
         SairComponent,
+        FilterNewsComponent,
     ],
     imports: [
         MatNativeDateModule,

@@ -1,1 +1,21 @@
-<p>noticias works!</p>
+<div class="noticias-tela-cheia">
+
+  <div class="noticias-tela">
+
+    <div class="filter-part">
+
+      <h2 class="filter-title">Filtros:</h2>
+
+      <div class="filter-card">
+        <app-filter-news
+        (click)="setSelectedFilter(filtro)"
+        [class.selected]="filtro == filtro_selecionado"
+        *ngFor="let filtro of lista_filtros"
+        [filtro]="filtro"
+        id="{{filtro}}"
+        ></app-filter-news>
+      </div>
+
+    </div>
+  </div>
+</div>
