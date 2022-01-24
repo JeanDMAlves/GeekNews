@@ -8,20 +8,16 @@ import { Component } from "@angular/core";
 export class HomePageComponent {
     public homeTabs = [
         {
-            label: "Listas",
-            link: "Listas",
+            label: "Sobre",
+            link: "Sobre",
         },
         {
-            label: "Histórico",
-            link: "Histórico",
+            label: "Notícias",
+            link: "Notícias",
         },
         {
-            label: "Atividades",
-            link: "Atividades",
-        },
-        {
-            label: "Membros",
-            link: "Membros",
+            label: "Contato",
+            link: "Contato",
         },
         {
             label: "Sair",

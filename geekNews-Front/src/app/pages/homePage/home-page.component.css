@@ -1,7 +1,7 @@
-.header {
+.header{
     display: flex;
     justify-content: space-between;
-    background: var(--white);
+    background-color: var(--white-var);
     height: 86px;
     border-bottom: 1px solid var(--grayscale-2);
     align-items: center;
@@ -15,6 +15,6 @@
     margin-left: 56px;
 }
 
-app-navegation-header {
+app-navigation-header {
     margin-right: 56px;
 }

@@ -1,0 +1,39 @@
+.tela{
+  background-color: var(--primary-dark);
+  height: 89.8vh;
+  display: flex;
+  justify-content: center;
+}
+
+.sobre{
+  background-color: var(--white-var);
+  width: 50vw;
+  height: 50vh;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 10vh;
+  display:flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.botoes{
+  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: space-evenly;
+}
+
+p{
+  text-align: justify;
+  margin-top: 2rem;
+  line-height: 1.5rem;
+}
+
+.dark-green-button{
+  margin-bottom: 2rem;
+}
+
+.dark-green-button:hover{
+  transform: scale(1.1);
+}

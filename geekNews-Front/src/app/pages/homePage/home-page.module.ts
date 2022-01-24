@@ -16,12 +16,20 @@ import { MatInputModule } from "@angular/material/input";
 import { MatCardModule } from "@angular/material/card";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from "@angular/material/core";
+import { SobreComponent } from './sobre/sobre.component';
+import { NoticiasComponent } from './noticias/noticias.component';
+import { ContatoComponent } from './contato/contato.component';
+import { SairComponent } from './sair/sair.component';
 
 @NgModule({
     declarations: [
         NavigationHeaderComponent,
         HomePageComponent,
         HomePageComponent,
+        SobreComponent,
+        NoticiasComponent,
+        ContatoComponent,
+        SairComponent,
     ],
     imports: [
         MatNativeDateModule,
