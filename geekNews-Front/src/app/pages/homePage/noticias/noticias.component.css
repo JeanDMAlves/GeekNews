@@ -34,7 +34,7 @@
 .filter-card{
   display: flex;
   flex-direction: column;
-  height: 50%;
+  height: 60%;
   overflow-y: auto;
   overflow-x: auto;
   margin-bottom: 10px;

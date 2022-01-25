@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 })
 export class NoticiasComponent{
   public filtro_selecionado: string = ''
-  public lista_filtros: Array<string> = ['Todas','Quadrinhos', 'Games', 'Séries' ]
+  public lista_filtros: Array<string> = ['Todas','Quadrinhos', 'Games', 'Séries', 'Filmes' ]
 
   public setSelectedFilter(filtro: string): void {
     this.filtro_selecionado = filtro
