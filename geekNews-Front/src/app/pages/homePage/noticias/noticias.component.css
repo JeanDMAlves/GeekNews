@@ -48,3 +48,7 @@
   border-radius: 4px;
   border-right: 15px solid var(--grayscale-4);
 }
+
+.card-news{
+  margin-left: 1rem;
+}

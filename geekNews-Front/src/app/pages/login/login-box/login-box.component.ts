@@ -96,7 +96,7 @@ export class LoginBoxComponent {
 		this.login.validateLogin(client).subscribe((data: any) => {
 			if(data["status"]){
 				this.localStorage.createToken(data["data"]);
-				this.router.navigate(["pages/home/"]);
+				this.router.navigate(["pages/home/Sobre"]);
 				console.log('Deu Certo')
 			}else{
 				window.alert('Usuário não está cadastrado')

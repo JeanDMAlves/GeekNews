@@ -21,6 +21,8 @@ import { NoticiasComponent } from './noticias/noticias.component';
 import { ContatoComponent } from './contato/contato.component';
 import { SairComponent } from './sair/sair.component';
 import { FilterNewsComponent } from './noticias/filter-news/filter-news.component';
+import { OrderListModule } from 'primeng/orderlist';
+import { CardNewsComponent } from './noticias/card-news/card-news.component';
 
 @NgModule({
     declarations: [
@@ -32,6 +34,7 @@ import { FilterNewsComponent } from './noticias/filter-news/filter-news.componen
         ContatoComponent,
         SairComponent,
         FilterNewsComponent,
+        CardNewsComponent,
     ],
     imports: [
         MatNativeDateModule,
@@ -49,6 +52,7 @@ import { FilterNewsComponent } from './noticias/filter-news/filter-news.componen
         MatInputModule,
         MatCardModule,
         MatButtonModule,
+        OrderListModule,
     ],
 })
 export class HomePageModule {}
