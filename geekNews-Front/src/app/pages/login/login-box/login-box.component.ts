@@ -33,6 +33,10 @@ export class LoginBoxComponent {
         private UserService: UserService,
     ) {}
 
+      public teste(){
+        console.log('a')
+      }
+
 	public registerNewUser(): any{
 		const user: IClient = this.getRegisterData()
 		if(user.password && user.email && user.confirmedPassword){
@@ -97,7 +101,6 @@ export class LoginBoxComponent {
 			if(data["status"]){
 				this.localStorage.createToken(data["data"]);
 				this.router.navigate(["pages/home/Sobre"]);
-				console.log('Deu Certo')
 			}else{
 				window.alert('Usuário não está cadastrado')
 			}
