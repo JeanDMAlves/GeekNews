@@ -20,6 +20,5 @@ export class NoticiasComponent implements OnInit{
 
   public ngOnInit(){
     this.lista_mostrada = this.newsService.getNews('Todas')
-    console.log(this.lista_mostrada)
   }
 }
