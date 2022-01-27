@@ -1,6 +1,7 @@
 (async () => {
     const database = require('./db');
     const User = require('./user');
+    const News = require('./news')
     const cors = require('cors')
 
     const nodemailer = require("nodemailer")
@@ -20,6 +21,28 @@
     const server = express();
     server.use(express.json())
     server.use(cors())
+
+    server.get('/news', (req, res) => {
+        // Retorna os usuários cadastrados no banco de dados
+        News.findAll().then((dados) => {
+            return res.json(dados);
+        }); 
+    })
+
+    server.post('/news', (req,res) => {
+        const news = req.body.news;
+        if(news){
+             News.create({
+                 img: news.img,
+                 titulo: news.titulo,
+                 noticia: news.noticia,
+                 resumo: news.resumo,
+                 autor: news.autor,
+                 label: news.label
+             })
+             return res.json({"result": "Notícia cadastrada com sucesso"})
+        }
+    })
 
     server.post('/recover', (req, res) => {
         const email_user = req.body.email

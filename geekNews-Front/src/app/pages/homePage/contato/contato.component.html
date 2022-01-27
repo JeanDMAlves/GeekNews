@@ -1,1 +1,25 @@
-<p>contato works!</p>
+<section class="contact-screen">
+  <div class="contact-box">
+    <h1>Contato</h1>
+    <p>Quer entrar em contato conosco? Preencha os dados abaixo</p>
+
+    <mat-form-field appearance="outline" class="input">
+      <mat-label>Nome</mat-label>
+      <input matInput [formControl]="nome">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="input">
+      <mat-label>Telefone</mat-label>
+      <input type="tel" matInput [formControl]="telefone">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="input">
+      <mat-label>Mensagem</mat-label>
+      <textarea [formControl]="mensagem" matInput></textarea>
+    </mat-form-field>
+
+    <button mat-button class="dark-green-button" id="button" type="submit" (click)="onSubmit()">
+      Enviar
+    </button>
+  </div>
+</section>
