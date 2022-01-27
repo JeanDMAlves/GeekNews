@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomePageModule } from './homePage/home-page.module';
@@ -12,7 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatError, MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
       MatIconModule,
       MatInputModule,
       MatFormFieldModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      CommonModule
     ],
     declarations: [PagesComponent, RecoverPasswordComponent],
     providers: [],

@@ -30,7 +30,7 @@
                         from: gmail,
                         to: email_user,
                         subject: 'Recuperação de senha',
-                        text: `Senha ${dados.password}`
+                        text: `Senha: ${dados.password}`
                     };
 
                     transporter.sendMail(mailOptions, function(error, info){
@@ -41,19 +41,19 @@
                         }
 
                         return res.json({
-                            "result": true 
+                            "result": "Cheque seu email!!!" 
                         })
                         
                     })
                 } else{
                     return res.json({
-                        "result": false
+                        "result": "Email não cadastrado"
                     })
                 }
             })
         }
         else{
-            return res.json({"mensagem": "Algum erro ocorreu"})
+            return res.json({"result": "Algum erro ocorreu"})
         }
     })
 

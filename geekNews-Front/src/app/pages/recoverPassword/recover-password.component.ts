@@ -1,3 +1,4 @@
+import { RecoverPasswordService } from './../../@core/services/recover-password.service';
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
@@ -9,10 +10,15 @@ import { FormControl, Validators } from '@angular/forms';
 export class RecoverPasswordComponent {
 
   public email: FormControl = new FormControl("", [Validators.required, Validators.email]);
-
+  public mensagem_recover: string = ""
+  constructor(private recoverPassword: RecoverPasswordService){}
 
   public onSubmit(){
-    console.log('AAAA')
+    if(this.email){
+      this.recoverPassword.recoverPassword({email: this.email.value}).subscribe((dados: any) => {
+        this.mensagem_recover = dados['result']
+      })
+    }
   }
 
   /**
