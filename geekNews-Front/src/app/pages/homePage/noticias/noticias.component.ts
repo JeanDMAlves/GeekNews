@@ -15,10 +15,18 @@ export class NoticiasComponent implements OnInit{
 
   public setSelectedFilter(filtro: string): void {
     this.filtro_selecionado = filtro
-    this.lista_mostrada = this.newsService.getNews(filtro)
+    this.newsService.getNews().subscribe((dados: any) => {
+      if(filtro == 'Todas'){
+      this.lista_mostrada = dados
+    } else{
+      this.lista_mostrada =  dados.filter((item: INews) => {return item.label == filtro})
+    }
+    })
   }
 
   public ngOnInit(){
-    this.lista_mostrada = this.newsService.getNews('Todas')
+    this.newsService.getNews().subscribe((dados: any) => {
+      this.lista_mostrada = dados
+    })
   }
 }

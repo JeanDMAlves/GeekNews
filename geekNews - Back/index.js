@@ -1,8 +1,9 @@
 (async () => {
     const database = require('./db');
     const User = require('./user');
-    const News = require('./news')
-    const cors = require('cors')
+    const News = require('./news');
+    const Messages = require('./message');
+    const cors = require('cors');
 
     const nodemailer = require("nodemailer")
     const gmail = "trabalhosifurg@gmail.com"
@@ -21,6 +22,27 @@
     const server = express();
     server.use(express.json())
     server.use(cors())
+
+    server.get('/message', (req, res) => {
+        // Retorna as mensagens cadastradas no banco de dados
+        Messages.findAll().then((dados) => {
+            return res.json(dados);
+        }); 
+    })
+
+    server.post('/message', (req,res) => {
+        const name = req.body.name
+        const phone = req.body.phone
+        const message = req.body.message
+        if(name && phone && message){
+            Messages.create({
+                Name: name,
+                Phone: phone,
+                Message: message
+            })
+             return res.json({"result": "Sua mensagem foi cadastrada em nosso banco de dados."})
+        }
+    })
 
     server.get('/news', (req, res) => {
         // Retorna os usuários cadastrados no banco de dados

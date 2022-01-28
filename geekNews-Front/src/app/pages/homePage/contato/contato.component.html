@@ -3,6 +3,8 @@
     <h1>Contato</h1>
     <p>Quer entrar em contato conosco? Preencha os dados abaixo</p>
 
+    <p *ngIf="resultado_mensagem.length > 0">** {{resultado_mensagem}} **</p>
+
     <mat-form-field appearance="outline" class="input">
       <mat-label>Nome</mat-label>
       <input matInput [formControl]="nome">
