@@ -33,10 +33,6 @@ export class LoginBoxComponent {
         private UserService: UserService,
     ) {}
 
-      public teste(){
-        console.log('a')
-      }
-
 	public registerNewUser(): any{
 		const user: IClient = this.getRegisterData()
 		if(user.password && user.email && user.confirmedPassword){
