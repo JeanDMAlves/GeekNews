@@ -1,8 +1,8 @@
 (async () => {
-    const database = require('./db');
-    const User = require('./user');
-    const News = require('./news');
-    const Messages = require('./message');
+    const database = require('./src/db');
+    const User = require('./src/user');
+    const News = require('./src/news');
+    const Messages = require('./src/message');
     const cors = require('cors');
 
     const nodemailer = require("nodemailer")
